@@ -1,3 +1,5 @@
+------------------------------------------------------------------------------------------
+tk docker build
 refer to :
 https://hub.docker.com/r/jupyter/
 https://hub.docker.com/r/jupyter/scipy-notebook/
@@ -28,6 +30,21 @@ python-dateutil>=2.4.2
 progressbar2>=3.6.2
 TA-Lib>=0.4.8
 
+------------------------------------------------------------------------------------------
+tk TA-lib install
+https://mrjbq7.github.io/ta-lib/install.html
+http://prdownloads.sourceforge.net/ta-lib/ta-lib-0.4.0-src.tar.gz
+http://prdownloads.sourceforge.net/ta-lib/ta-lib-0.4.0-msvc.zip
+Download ta-lib-0.4.0-src.tar.gz and:
+
+$ untar and cd
+$ ./configure --prefix=/usr
+$ make
+$ sudo make install
+
+
+------------------------------------------------------------------------------------------
+tk run
 
 make sure current folder contain 'work' sub-dir and start-notebook.sh in it
 
