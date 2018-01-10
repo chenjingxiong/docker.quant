@@ -1,8 +1,18 @@
 ------------------------------------------------------------------------------------------
 tk
+Dockerfile
+    quantdigger
+    based on scipy-notebook
 Dockerfile2, based on small base-notebook
+    guantdigger
 
-------------------------------------------------------------------------------------------
+Dockerfile3
+    based on small base-notebook, root env
+    zipline & backtrader
+    env quant
+
+------------------------------------------------------------------
+tk docker build
 
 tk docker build
 refer to :
@@ -60,6 +70,8 @@ run python notebook/jupyter/pandas
 
 run python notebook/jupyter/pandas with quant environment
 
+docker -l debug build -f Dockerfile -t quant .
+
 docker run -it --rm -p 8888:8888 \
     -v /u01/save:/u01/save/ \
     -v ./work:/home/jovyan/work/ \
@@ -71,4 +83,12 @@ docker run -it --rm -p 8889:8888 \
     -v ${PWD}/work:/home/jovyan/work/ \
     --entrypoint /home/jovyan/work/start-notebook.sh \
     quant
+
+
+docker -l debug build -f Dockerfile3 -t quant.zipline .
+
+docker run -it --rm -p 8889:8888 \
+    -v /u01/save:/u01/save/ \
+    -v /u01/save/work:/home/jovyan/work/ \
+    quant.zipline
 
